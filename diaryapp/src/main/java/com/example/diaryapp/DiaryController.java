@@ -15,7 +15,7 @@ public class DiaryController {
 
     @PostMapping
     public Diary createDiary(@RequestBody Diary diary){
-        return diaryService.createDiary(diary);
+        return diaryService.createDiary(diary, diary.getUserId());
     }
 
     @GetMapping
@@ -24,17 +24,17 @@ public class DiaryController {
     }
 
     @GetMapping("/{id}")
-    public Diary getDiary(@PathVariable Long id){
+    public Diary getDiary(@PathVariable("id") Long id){
         return diaryService.getDiary(id);
     }
 
     @PutMapping("/{id}")
-    public Diary updateDiary(@PathVariable Long id, @RequestBody Diary diary){
+    public Diary updateDiary(@PathVariable("id") Long id, @RequestBody Diary diary){
         return diaryService.updateDiary(id, diary);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteDiary(@PathVariable Long id){
+    public void deleteDiary(@PathVariable("id") Long id){
         diaryService.deleteDiary(id);
     }
 }
