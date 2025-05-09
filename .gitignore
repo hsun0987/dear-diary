@@ -49,3 +49,4 @@ build/reports/
 *.tar.gz
 *.rar
 hs_err_pid*
+diaryapp/out/production/
